@@ -1,0 +1,102 @@
+{
+    // 翻译自官方文档，by Leo Wang
+    // Enforcing options
+    "bitwise": false, // 如果是true 则禁止使用位运算符如:&, ^等，js中位运算符很少使用，而且很容易会把&&写错为&。
+    "camelcase": true, // 如果是true 则强制要求所有的变量命名形式为:驼峰法 或者 下划线分隔的全大写 
+    "curly": true, // 如果是true 则要求循环和条件语句中的语句块必须放在{}中
+    "eqeqeq": false, // 如果是true 则要求在所有的比较时使用===和!==而不是使用==和!=
+    "forin": false, // 如果是true 则不允许for in在没有hasOwnProperty时使用
+    "immed": true, // 如果是true 则不允许定义直接使用 function(){}()的形式，而是要求必须将匿名函数的调用用括号包围
+    "latedef": false, // 如果是true 则必须在使用一个变量之前声明它，引申开来其实是禁止使用提升scope的全局变量，而是使用声明了的局部变量
+    "newcap": true,  // 如果是true 则构造函数的首字母必须大写
+    "noarg": false, // 如果是true 则不允许使用arguments.caller和arguments.callee，Both .caller and .callee使得一些优化行为无法实现，所以它们在将来的JavaScript版本中会被弃用。事实上ECMAScript 5已经在strict mode弃用了arguments.callee。
+    "noempty": true, // 如果是true 则会warn空代码块(empty block)的使用。如：{}。
+    "nonew": true, // 如果是true 则不允许不做赋值的构造函数 例如new MyConstructor()
+    "plusplus": false, // 如果是true 则不允许使用一元运算符++或--
+    "quotmark": "single", // 有3种值如果是true 则表示要求引号一致如果是single 则表示只允许使用单引号如果是double 则表示只允许双引号 
+
+    "undef": false, // 如果是true 则所有的局部变量必须先声明之后才能使用，可以去解决手误等原因导致的变量名字错误，同时你可以使用 /*global ... */ 去告诉JSHint要使用一个别的文件定义的全局变量
+    "unused": true, // 如果是true 则不允许声明变量之后不使用
+    "strict": false, // 如果是true 则不允许声明变量之后不使用则要求所有的函数都运行于ECMAScript 5's strict mode。注意只是函数，如果想全局，去看globalstrict选项。 另：strict mode链接 https://developer.mozilla.org/en/JavaScript/Strict_mode
+    "trailing": false, // 如果是true 则正则中不允许使用则禁止在代码最后留有空白
+    "maxparams": 20, // 一个函数最多有多少个参数
+    "maxdepth": 6, // 一个代码块最多有多少层，我们以{}来区分
+    // maxstatements: 20, // 一个函数中最多可以使用多少条语句
+    // maxcomplexity: , // 控制你的代码的循环复杂度 http://en.wikipedia.org/wiki/Cyclomatic_complexity
+    "maxlen": 80, // 一行最多多少个字符
+    "indent":4, // 定义缩进的空格数，不在erik给的检查中，add by Leo
+
+    // "regexp": false, // 如果是true 则正则中不允许使用. 这个在官方最新文档中木有了，so delete by Leo
+
+    // Relaxing options
+    "asi": false, // 这个选项会不去warn缺失的分号，为了IE7，必须得警告
+    "boss": false, // 是否不warn期待是一个比较语句而实际上是一个赋值语句的情况，例如if(a = 10){}，这可能是一个手误，但是这种情况可能就会很有用：for (var i = 0, person; person = people[i]; i++) {}
+    "debug": false, // 是否不warn声明debugger的使用
+    "eqnull": true, // 是否不去警告 == null 的比较
+    // es3: true, // 如果为true，表示你的js代码要遵循ECMAScript3标准，如果你的代码要跑在旧浏览器例如IE6/7/8等旧环境
+    "es5": true,
+    "esnext": false, // 是否你的代码使用了ECMAScript 6特性语法，注意不是所有的特性都定案了并且不是所有的浏览器都实现了。 http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts
+    "evil": true, // 是否不warn eval的使用
+    "expr": true, // 是否不warn 当期待是赋值或者函数函数调用时出现的却是表达式的状况，例如我们常用的 isFunc(a) && a();
+    "funcscope": false, // 是否不warn 错误的变量scope的使用，例如代码块中声明，但是外部却有调用
+    "globalstrict": false, // 是否不warn global strict mode的使用，它会中断第三方widgets的使用，因此不推荐使用
+    "iterator": false, // 是否不warn属性__iterator__的使用，这个属性并不是每个浏览器都支持
+    "lastsemic": false, // 是否不warn分号的缺失，但是仅在单行语句的最后一个表达式省略时才有效，例如 var name = (function() { return 'Anton' }());
+    "laxbreak": true, // 是否不warn大多数的不安全的代码换行，它不管逗号在前的断行形式，需要用laxcomma
+    "laxcomma": false, // 是否不warn使用逗号在前的断行形式，例如：
+    /**
+     var obj = {
+        name: 'Anton'
+      , handle: 'valueof'
+      , role: 'SW Engineer'
+    };
+
+     */
+    "loopfunc": false, // 是否不warn在循环语句中定义function，这可能会导致bug，而避免bug的话又要使用闭包
+    // moz: true, // 告诉jshint你的代码是否使用Mozilla JavaScript extensions，除非你只针对FF开发，否则不要用它
+    "multistr": false, // 是否不warn多行字符串的使用，多行字符串的使用其实是很危险的，很容易手误
+
+    /*jshint multistr:true */
+    /**
+        var text = "Hello\
+        World"; // All good.
+
+        text = "Hello
+        World"; // Warning, no escape character.
+
+        text = "Hello\ 
+        World"; // Warning, there is a space after \
+     */
+
+    // "onecase": false, 没找到在最新的文档中
+    "proto": false, // 是否不warn属性__proto__的使用
+    // "regexdash": false, 没找到在最新的文档中
+    "scripturl": false, // 是否不警告script-targeted URLs，例如javascript:sth
+    "smarttabs": false, // 是否不警告tabs和空格的混用（当为了对齐）
+    "shadow": true, // 是否不警告变量的作用域内覆盖声明，例如在函数内声明一个全局已经声明过的全局变量
+    "sub": true, // 是否不警告当可以使用.调用时，还使用[]的状况  person['name'] vs. person.name
+    "supernew": false, // 是否不警告奇怪的构造器使用形式，例如 new function () { ... } 或者 new Object; 这样的形式可以用来在JS中创建单件。
+    "validthis": true, // 是否不warn这种情况：在strict mode下，你在非构造函数中使用了this。你只能在函数作用域使用这个选项，并且你确认你对于this的使用符合strict mode的要求，例如Function.call。
+
+    // Environments
+    // popular JavaScript libraries and runtime environments — such as browser or Node
+    "browser": true, // 使用现代浏览器，例如旧有的document、navigator到HTML5的FileReader等，及其他更新的东东
+    "couch": false, // 使用CouchDB？CouchDB is a document-oriented database that can be queried and indexed in a MapReduce fashion using JavaScript. http://couchdb.apache.org/
+    "devel": true, // 使用悲剧猿的调试方式：console, alert...
+    "dojo": false, // 使用the Dojo Toolkit. http://dojotoolkit.org/
+    "jquery": true, // 使用the jQuery JavaScript library. http://jquery.com/
+    "mootools": false, // 使用the MooTools JavaScript framework. http://mootools.net/
+    "node": false, // 使用在Node环境？ http://nodejs.org/
+    "nonstandard": false, // 使用不标准但是被广泛使用的东东，例如escape and unescape.
+    "prototypejs": false, // 使用Prototype JavaScript framework. http://www.prototypejs.org/
+    "rhino": false, // 使用在Rhino环境？ Rhino 是一个开源的用Java搞JavaScript的东东 http://www.mozilla.org/rhino/
+    // "worker": false, // 你的代码跑在Web Worker里？(行内使用JsHint注释块去进行标记更好一些)。https://developer.mozilla.org/en/Using_web_workers
+    "wsh": false, // 你的代码是Windows Script Host的脚本？ http://en.wikipedia.org/wiki/Windows_Script_Host
+    // yui: false, // 使用YUI？
+
+    // Legacy
+    "nomen": true, // 为true，则禁止在变量中使用_作为前缀，例如我们常用的私有属性形式 _sth
+    "onevar": false, // 是否在一个函数中只允许一个var的存在
+    "passfail": false, // 是否出现了错误JsHint就立刻停止继续检查
+    "white": false // 是否使用《The Good Parts》的作者Douglas Crockford的代码风格来检查你的代码，他的似乎有些理想化
+}
