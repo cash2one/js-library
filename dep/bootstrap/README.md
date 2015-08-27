@@ -1,137 +1,120 @@
-# [Bootstrap](http://getbootstrap.com)
-[![Slack](https://bootstrap-slack.herokuapp.com/badge.svg)](https://bootstrap-slack.herokuapp.com)
-![Bower version](https://img.shields.io/bower/v/bootstrap.svg)
-[![npm version](https://img.shields.io/npm/v/bootstrap.svg)](https://www.npmjs.com/package/bootstrap)
-[![Build Status](https://img.shields.io/travis/twbs/bootstrap/master.svg)](https://travis-ci.org/twbs/bootstrap)
-[![devDependency Status](https://img.shields.io/david/dev/twbs/bootstrap.svg)](https://david-dm.org/twbs/bootstrap#info=devDependencies)
-[![Selenium Test Status](https://saucelabs.com/browser-matrix/bootstrap.svg)](https://saucelabs.com/u/bootstrap)
+### UI Bootstrap - [AngularJS](http://angularjs.org/) directives specific to [Bootstrap](http://getbootstrap.com)
 
-Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thornton](https://twitter.com/fat), and maintained by the [core team](https://github.com/orgs/twbs/people) with the massive support and involvement of the community.
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/angular-ui/bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://secure.travis-ci.org/angular-ui/bootstrap.svg)](http://travis-ci.org/angular-ui/bootstrap)
+[![devDependency Status](https://david-dm.org/angular-ui/bootstrap/dev-status.svg?branch=master)](https://david-dm.org/angular-ui/bootstrap#info=devDependencies)
 
-To get started, check out <http://getbootstrap.com>!
+### Quick links
+- [Demo](#demo)
+- [Installation](#installation)
+    - [NPM](#install-with-npm)
+    - [Bower](#install-with-bower)
+    - [NuGet](#install-with-nuget)
+    - [Custom](#custom-build)
+    - [Manual](#manual-download)
+- [Support](#support)
+    - [FAQ](#faq)
+    - [Supported browsers](#supported-browsers)
+    - [Need help?](#need-help)
+    - [Found a bug?](#found-a-bug)
+- [Contributing to the project](#contributing-to-the-project)
+- [Development, meeting minutes, roadmap and more.](#development-meeting-minutes-roadmap-and-more)
 
-## Table of contents
 
-- [Quick start](#quick-start)
-- [Bugs and feature requests](#bugs-and-feature-requests)
-- [Documentation](#documentation)
-- [Contributing](#contributing)
-- [Community](#community)
-- [Versioning](#versioning)
-- [Creators](#creators)
-- [Copyright and license](#copyright-and-license)
+# Demo
 
-## Quick start
+Do you want to see directives in action? Visit http://angular-ui.github.io/bootstrap/!
 
-Several quick start options are available:
+# Installation
 
-- [Download the latest release](https://github.com/twbs/bootstrap/archive/v3.3.5.zip).
-- Clone the repo: `git clone https://github.com/twbs/bootstrap.git`.
-- Install with [Bower](http://bower.io): `bower install bootstrap`.
-- Install with [npm](https://www.npmjs.com): `npm install bootstrap`.
-- Install with [Meteor](https://www.meteor.com): `meteor add twbs:bootstrap`.
-- Install with [Composer](https://getcomposer.org): `composer require twbs/bootstrap`.
+Installation is easy as UI Bootstrap has minimal dependencies - only the AngularJS and Twitter Bootstrap's CSS are required.
+Note: Since version 0.13.0, UI Bootstrap depends on [ngAnimate](https://docs.angularjs.org/api/ngAnimate) for transitions and animations, such as the accordion, carousel, etc. Include `ngAnimate` in the module dependencies for your app in order to enable animation.
 
-Read the [Getting started page](http://getbootstrap.com/getting-started/) for information on the framework contents, templates and examples, and more.
+#### Install with NPM
 
-### What's included
-
-Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
-
-```
-bootstrap/
-├── css/
-│   ├── bootstrap.css
-│   ├── bootstrap.css.map
-│   ├── bootstrap.min.css
-│   ├── bootstrap-theme.css
-│   ├── bootstrap-theme.css.map
-│   └── bootstrap-theme.min.css
-├── js/
-│   ├── bootstrap.js
-│   └── bootstrap.min.js
-└── fonts/
-    ├── glyphicons-halflings-regular.eot
-    ├── glyphicons-halflings-regular.svg
-    ├── glyphicons-halflings-regular.ttf
-    ├── glyphicons-halflings-regular.woff
-    └── glyphicons-halflings-regular.woff2
+```sh
+$ npm install angular-ui-bootstrap
 ```
 
-We provide compiled CSS and JS (`bootstrap.*`), as well as compiled and minified CSS and JS (`bootstrap.min.*`). CSS [source maps](https://developer.chrome.com/devtools/docs/css-preprocessors) (`bootstrap.*.map`) are available for use with certain browsers' developer tools. Fonts from Glyphicons are included, as is the optional Bootstrap theme.
+This will install AngularJS and Bootstrap NPM packages.
+
+#### Install with Bower
+```sh
+$ bower install angular-bootstrap
+```
+
+Note: do not install 'angular-ui-bootstrap'.  A separate repository - [bootstrap-bower](https://github.com/angular-ui/bootstrap-bower) - hosts the compiled javascript file and bower.json.
+
+#### Install with NuGet
+To install AngularJS UI Bootstrap, run the following command in the Package Manager Console
+
+```sh
+PM> Install-Package Angular.UI.Bootstrap
+```
+
+#### Custom build
+
+Head over to http://angular-ui.github.io/bootstrap/ and hit the *Custom build* button to create your own custom UI Bootstrap build, just the way you like it.
+
+#### Manual download
+
+After downloading dependencies (or better yet, referencing them from your favorite CDN) you need to download build version of this project. All the files and their purposes are described here:
+https://github.com/angular-ui/bootstrap/tree/gh-pages#build-files
+Don't worry, if you are not sure which file to take, opt for `ui-bootstrap-tpls-[version].min.js`.
+
+### Adding dependency to your project
+
+When you are done downloading all the dependencies and project files the only remaining part is to add dependencies on the `ui.bootstrap` AngularJS module:
+
+```js
+angular.module('myModule', ['ui.bootstrap']);
+```
+
+If you're a Browserify or Webpack user, you can do:
+
+```js
+var uibs = require('angular-ui-bootstrap');
+
+angular.module('myModule', [uibs]);
+```
+
+# Support
+
+## FAQ
+
+https://github.com/angular-ui/bootstrap/wiki/FAQ
+
+## Supported browsers
+
+Directives from this repository are automatically tested with the following browsers:
+* Chrome (stable and canary channel)
+* Firefox
+* IE 9 and 10
+* Opera
+* Safari
+
+Modern mobile browsers should work without problems.
 
 
+## Need help?
+Need help using UI Bootstrap?
 
-## Bugs and feature requests
+* Live help in the IRC (`#angularjs` channel at the `freenode` network). Use this [webchat](https://webchat.freenode.net/) or your own IRC client.
+* Ask a question in [StackOverflow](http://stackoverflow.com/) under the [angular-ui-bootstrap](http://stackoverflow.com/questions/tagged/angular-ui-bootstrap) tag.
 
-Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md#using-the-issue-tracker) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/twbs/bootstrap/issues/new).
+**Please do not create new issues in this repository to ask questions about using UI Bootstrap**
 
-
-## Documentation
-
-Bootstrap's documentation, included in this repo in the root directory, is built with [Jekyll](http://jekyllrb.com) and publicly hosted on GitHub Pages at <http://getbootstrap.com>. The docs may also be run locally.
-
-### Running documentation locally
-
-1. If necessary, [install Jekyll](http://jekyllrb.com/docs/installation) (requires v2.5.x).
-  - **Windows users:** Read [this unofficial guide](http://jekyll-windows.juthilo.com/) to get Jekyll up and running without problems.
-2. Install the Ruby-based syntax highlighter, [Rouge](https://github.com/jneen/rouge), with `gem install rouge`.
-3. From the root `/bootstrap` directory, run `jekyll serve` in the command line.
-4. Open <http://localhost:9001> in your browser, and voilà.
-
-Learn more about using Jekyll by reading its [documentation](http://jekyllrb.com/docs/home/).
-
-### Documentation for previous releases
-
-Documentation for v2.3.2 has been made available for the time being at <http://getbootstrap.com/2.3.2/> while folks transition to Bootstrap 3.
-
-[Previous releases](https://github.com/twbs/bootstrap/releases) and their documentation are also available for download.
+## Found a bug?
+Please take a look at [CONTRIBUTING.md](CONTRIBUTING.md#you-think-youve-found-a-bug) and submit your issue [here](https://github.com/angular-ui/bootstrap/issues/new).
 
 
-
-## Contributing
-
-Please read through our [contributing guidelines](https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
-
-Moreover, if your pull request contains JavaScript patches or features, you must include [relevant unit tests](https://github.com/twbs/bootstrap/tree/master/js/tests). All HTML and CSS should conform to the [Code Guide](https://github.com/mdo/code-guide), maintained by [Mark Otto](https://github.com/mdo).
-
-Editor preferences are available in the [editor config](https://github.com/twbs/bootstrap/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
+----
 
 
+# Contributing to the project
 
-## Community
+We are always looking for the quality contributions! Please check the [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution guidelines.
 
-Get updates on Bootstrap's development and chat with the project maintainers and community members.
+# Development, meeting minutes, roadmap and more.
 
-- Follow [@getbootstrap on Twitter](https://twitter.com/getbootstrap).
-- Read and subscribe to [The Official Bootstrap Blog](http://blog.getbootstrap.com).
-- Join [the official Slack room](https://bootstrap-slack.herokuapp.com).
-- Chat with fellow Bootstrappers in IRC. On the `irc.freenode.net` server, in the `##bootstrap` channel.
-- Implementation help may be found at Stack Overflow (tagged [`twitter-bootstrap-3`](https://stackoverflow.com/questions/tagged/twitter-bootstrap-3)).
-- Developers should use the keyword `bootstrap` on packages which modify or add to the functionality of Bootstrap when distributing through [npm](https://www.npmjs.com/browse/keyword/bootstrap) or similar delivery mechanisms for maximum discoverability.
-
-
-
-## Versioning
-
-For transparency into our release cycle and in striving to maintain backward compatibility, Bootstrap is maintained under [the Semantic Versioning guidelines](http://semver.org/). Sometimes we screw up, but we'll adhere to those rules whenever possible.
-
-
-
-## Creators
-
-**Mark Otto**
-
-- <https://twitter.com/mdo>
-- <https://github.com/mdo>
-
-**Jacob Thornton**
-
-- <https://twitter.com/fat>
-- <https://github.com/fat>
-
-
-
-## Copyright and license
-
-Code and documentation copyright 2011-2015 Twitter, Inc. Code released under [the MIT license](https://github.com/twbs/bootstrap/blob/master/LICENSE). Docs released under [Creative Commons](https://github.com/twbs/bootstrap/blob/master/docs/LICENSE).
+Head over to the [Wiki](https://github.com/angular-ui/bootstrap/wiki) for notes on development for UI Bootstrap, meeting minutes from the UI Bootstrap team, roadmap plans, project philosophy and more.
