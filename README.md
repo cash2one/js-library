@@ -31,9 +31,8 @@ js-library 是一个js common库，为了前期与js-common共存，所以取名
 * widget 公共的小组件。比如regionSelector、subjectSelector。
 * test 所有端到端测试和单元测试用列
 
-![Alt text](http://api.photo.yunpan.360.cn/intf.php?method=Photo.getThumb&qid=2540845786&nid=144072503894874157&size=1280_1280&devid=&rtick=1440725049&v=1.0.1&devtype=web&sign=bc52d86354e1bf14154aea34b80d1f38&xid=64403129)
+![Alt text](http://sucimg.itc.cn/sblog/j66fdd6aae1e57439a2bd348b77c8bf13)
 （图1）
 
-![Alt text](http://api.photo.yunpan.360.cn/intf.php?method=Photo.getThumb&qid=2540845786&nid=144072503894874164&size=1280_1280&devid=&rtick=1440725049&v=1.0.1&devtype=web&sign=bc52d86354e1bf14154aea34b80d1f38&xid=64403129)
+![Alt text](http://sucimg.itc.cn/sblog/ja25e87bc4954ddba122e402f77888787)
 （图2）
-
