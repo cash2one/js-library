@@ -11,7 +11,7 @@
     </head>
     <body>
         <div ng-view class="view-slide-in"></div>
-        <a href="#/test">test</a>
+        <a href="#/t2">test</a>
     </body>
     <script type="text/javascript">
 
@@ -35,11 +35,14 @@
                         ])
                         .config(['$routeProvider', function($routeProvider) {
                             $routeProvider
-                                .when('/', {
-                                    template: 'this is my slide view animation test'
+                                .when('/t1', {
+                                    template: 'this is my slide view animation test<br/>12<br/>12<br/>12'
                                 })
-                                .when('/test', {
-                                    template: 'this is my slide view animation test url'
+                                .when('/t2', {
+                                    template: 'this is my slide view animation test url<br/>12<br/>12<br/>12<br/>12<br/>12<br/>12'
+                                })
+                                .otherwise({
+                                    redirectTo: '/t1'
                                 });
                             }
                         ]);
