@@ -25,11 +25,11 @@ js-library 是一个js common库，为了前期与js-common共存，所以取名
 ## 目录介绍
 * dep 第三方依赖，如jquery、angularjs。
 * biz 公共业务处理。如room、cas。
-* demo demo展示示例
+* demo demo展示示例。
 * ngDirective 公共angularJs指令 如regionSelector、subjectSelector。
 * ngService 公共angularJs服务。如urlUtil、storage。
 * ngFilter 公共的angularJs filter，比如货币filter。（内置的filter负数展示有问题）
-* ngAnimation 公共的动画
+* ngAnimation 公共的动画。
 * function 公共的function。比使生成一个唯一的guid函数。目前function的文件copy了凤巢和cobble中的function。
 * uitl 公共的uitl。比如时间处理工具、flag控制。
 * widget 公共的小组件。比如regionSelector、subjectSelector。
